@@ -1,13 +1,8 @@
 #include<iostream>
 #include<conio.h>
+#include<math.h>
 using namespace std; 
 
-void  swap(int* a,int* b)
-{
-	int c = *a;
-	*a = *b; 
-	*b = c;
-}
 int partition (int arr[], int low, int high) 
 { 
     int pivotElement = arr[low];    
@@ -20,13 +15,13 @@ int partition (int arr[], int low, int high)
             j=j+1; 
 		
 		if(i!=j)
-           swap(&arr[i], &arr[j]); 
+           swap(arr[i], arr[j]); 
        }
          
     } 
     int pivot_point=j;
     if(low!=pivot_point)
-    swap(&arr[pivot_point],&arr[low]); 
+    swap(arr[pivot_point],arr[low]); 
     
     return  pivot_point; 
 }
@@ -50,7 +45,7 @@ void printArray(int arr[], int size)
 } 
 int main() 
 { 
-    int arr[] = {10, 7, 8, 9, 1, 5}; 
+    int arr[] = {10, 7, 8, 9, 1,3,5}; 
     quickSort(arr, 0, 5); 
     printf("Sorted array: \n"); 
     printArray(arr, 5); 
